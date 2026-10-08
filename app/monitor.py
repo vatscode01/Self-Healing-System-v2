@@ -11,13 +11,6 @@ def get_cpu_times():
     cpu_times =  ps.cpu_times()
     return json.dumps(cpu_times._asdict(), indent=4)
 
-
-# def get_data(anything):
-#     data = ps.{"anything"}()
-#     return json.dumps(data._asdic
-
-# print(get_data("cpu_times"))
-
 def get_data(function_name):
     func = getattr(ps,function_name)
     data = func()
@@ -26,8 +19,6 @@ def get_data(function_name):
 print(get_data("cpu_times"))
 print(get_data("virtual_memory"))
 print(get_data("disk_io_counters"))
-# print(get_data("process_count"))
-# print(get_data("system_metrics"))
 
 
 # print(get_cpu_times())
