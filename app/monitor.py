@@ -7,14 +7,12 @@ def get_data_according_function(function_name):
     return json.dumps(data._asdict(), indent = 4)
 
 def get_stats():
-    data = {
+    return {
         "cpu" : ps.cpu_percent(1),
         "memory" : ps.virtual_memory().percent,
         "disk" : ps.disk_usage('/').percent,
         "tasks" : len(ps.pids()),
 
     }
-    return json.dumps(data, indent=4)
 
-print(get_stats())
 
